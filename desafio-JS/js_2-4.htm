@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+        
+        <input type="text" name="nome">
+        <button onclick="adicionar()">Adicionar</button>
+        <ul></ul>
+        <script>
+            var texto= document.querySelector('input')
+            var lista= document.querySelector('ul')
+            
+             function adicionarItem(text){
+                var li= document.createElement('li')
+                var textodoli=document.createTextNode(text)
+                li.appendChild(textodoli)
+                lista.appendChild(li);
+             }
+             function adicionar(){
+                 adicionarItem(texto.value);
+                 texto.value="";
+             }
+        </script>    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manipulando dom</title>
+</head>
+<body>
+	<button id="clic">criar Novo</button>
+	<div id="conteudo"></div>
+<script>
+	var button=document.getElementById('clic')
+	var conteudo=document.getElementById('conteudo')
+
+	function getRandomColor() {
+		var letters = "0123456789ABCDEF";
+		var color = "#";
+		for (var i = 0; i < 6; i++) {
+		color += letters[Math.floor(Math.random() * 16)];
+		}
+		return color;
+	   }
+	
+	button.onclick= function(){
+			var div = document.createElement('div');
+		div.style.width='100px';
+		div.style.height='100px';
+		div.style.backgroundColor='blue';
+		div.onmouseover=function(){
+			var cor= getRandomColor();
+			div.style.backgroundColor=cor;
+		}	
+		
+		conteudo.appendChild(div)
+
+	
+	
+	}
+	
+	
+	   
+</script>	
+</body>
+</html>

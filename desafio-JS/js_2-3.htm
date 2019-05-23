@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>elemento de listas</title>
+</head>
+<body>
+    <ul></ul>
+<script>
+    var nomes=['victor','mussumeci','giza']
+     
+    var lista= document.querySelector('ul');
+    
+     for(nome of nomes){
+         var li= document.createElement('li')
+        var texto=document.createTextNode(nome)
+        li.appendChild(texto);
+        lista.appendChild(li)
+    }
+    
+</script>    
+</body>
+</html>

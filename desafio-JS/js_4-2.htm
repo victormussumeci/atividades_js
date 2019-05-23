@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>modulo 4 exercicio 2</title>
+</head>
+<body>
+		<input type="text" name="nome">
+        <button onclick="adicionar()">Adicionar</button>
+        <ul></ul>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+		var lista = document.querySelector('ul');
+		var input = document.querySelector('input');
+		function renderRepositories(repositories) {
+			for (repo of repositories) {
+			  const textElement = document.createTextNode(repo.name);
+			  const li = document.createElement('li');
+			  li.appendChild(textElement);
+			  lista.appendChild(li);
+			}
+		  }
+		function adicionar(){
+		
+			var user = inputElement.value;
+			if (!user) return;
+			axios.get('https://api.github.com/users/' + user + '/repos')
+			  .then(function (response) {
+				renderRepositories(response.data);
+			  })
+		  }
+
+
+</script>	
+</html>
